@@ -117,7 +117,7 @@ header {
     width: 100%;
     max-width: 1440px;
     padding: 0 20px; 
-    margin: 0 auto; /* WICHTIG: Zentriert den Header-Inhalt bei großen Bildschirmen */
+    margin: 0 auto;
     box-sizing: border-box;
 }
 
@@ -205,12 +205,11 @@ main {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    /* overflow-y: auto;  <-- ENTFERNT! Das hat das Desktop-Layout gestört */
 }
 
 .container {
     width: 100%;
-    max-width: 1440px; /* Begrenzung für große Bildschirme */
+    max-width: 1440px; 
     display: flex;
     justify-content: center;
     padding: 0 20px;
@@ -255,6 +254,7 @@ main {
     transition: transform 0.2s;
     display: flex;
     flex-direction: column;
+    position: relative; /* Wichtig für die Mini-Pfeile */
 }
 
 .project-card:hover {
@@ -305,9 +305,49 @@ main {
     display: block;    
 }
 
-.mobile-description {
-    color: white;
+/* =========================================
+   NEU: MINI-SLIDER IN KARTEN (PROJEKTE)
+   ========================================= */
+
+.card-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(6, 23, 30, 0.7); /* Dunkler Kreis */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: all 0.2s;
+    padding: 0;
 }
+
+/* Style für das Bild im Button */
+.card-arrow img {
+    width: 14px;
+    height: auto;
+    filter: invert(1); /* Macht schwarze Icons weiß */
+    transition: filter 0.2s;
+}
+
+.card-arrow:hover {
+    background-color: #2AE1E8; /* Türkiser Kreis beim Hover */
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Beim Hover wird das Icon wieder schwarz für Kontrast */
+.card-arrow:hover img {
+    filter: invert(0); 
+}
+
+.card-arrow.prev { left: 10px; }
+.card-arrow.next { right: 10px; }
+
 
 /* =========================================
    5. STARTSEITE: HERO SECTION
@@ -361,7 +401,7 @@ main {
 
 .scroll-arrow {
     position: absolute;
-    bottom: 50px; /* Etwas höher gezogen */
+    bottom: 50px; 
     left: 50%;
     transform: translateX(-50%);
     animation: bounce 2s infinite; 
@@ -637,19 +677,91 @@ input:focus, textarea:focus { border-color: #2AE1E8; }
 .close-btn:hover { color: white; }
 
 /* Modal Layouts */
-.modal-layout { display: flex; flex-direction: row; height: 100%; min-height: 400px; }
-.modal-layout .modal-image-area { flex: 2; position: relative; background-color: black; display: flex; align-items: center; justify-content: center; }
-.modal-info-area { flex: 1; padding: 40px 20px; display: flex; flex-direction: column; gap: 15px; border-left: 1px solid rgba(255,255,255,0.1); }
+.modal-layout { 
+    display: flex; 
+    flex-direction: row; 
+    height: 100%; 
+    min-height: 400px;
+    /* Begrenzung der Höhe auf Desktop, damit Bild nicht riesig wird */
+    max-height: 85vh; 
+}
+
+.modal-layout .modal-image-area {
+    flex: 2; /* Bild bekommt 2/3 des Platzes (vorher weniger?) */
+    position: relative;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Wichtig */
+}
+
+.modal-info-area {
+    flex: 1; /* Text bekommt 1/3 des Platzes */
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    overflow-y: auto; /* Falls der Text zu lang ist, scrollt nur der Text */
+}
+
 .modal-info-area h2 { margin-top: 0; color: #2AE1E8; }
-.time-badge { display: inline-flex; align-items: center; gap: 8px; background-color: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 15px; font-size: 0.9rem; width: fit-content; }
 
-.modal-layout-single { display: flex; flex-direction: column; width: 100%; height: 100%; min-height: 400px; padding-bottom: 20px; }
-.modal-single-title { text-align: center; margin: 20px 0 10px 0; font-size: 1.8rem; color: #2AE1E8; }
-.modal-layout-single .modal-image-area { width: 100%; height: 100%; position: relative; background-color: black; display: flex; align-items: center; justify-content: center; }
-.modal-image-area img { max-width: 100%; max-height: 70vh; object-fit: contain; }
+.time-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background-color: rgba(255,255,255,0.1);
+    padding: 5px 12px; border-radius: 15px; font-size: 0.9rem; width: fit-content;
+}
 
-.counter-bubble { position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); background-color: rgba(0, 0, 0, 0.6); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.9rem; border: 1px solid rgba(255, 255, 255, 0.3); font-family: "TextSchrift", sans-serif; pointer-events: none; }
-.material-bubble { position: absolute; top: 10px; right: 10px; background-color: #2AE1E8; color: rgb(6,23,30); padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: bold; font-family: "TextSchrift", sans-serif; box-shadow: 0 2px 5px rgba(0,0,0,0.5); z-index: 5; }
+/* WICHTIG: Das Bild-Styling für BEIDE Varianten (Planung & Projekte) */
+.modal-image-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Verhindert Abschneiden! Zeigt immer das ganze Bild */
+    max-height: 85vh;    /* Sicherheitslimit */
+    display: block;
+}
+
+/* Planung (Single Layout) */
+.modal-layout-single {
+    display: flex; flex-direction: column;
+    width: 100%; height: 100%; 
+    min-height: 400px;
+    padding-bottom: 20px;
+}
+
+.modal-single-title {
+    text-align: center; margin: 20px 0 10px 0;
+    font-size: 1.8rem; color: #2AE1E8;
+}
+
+.modal-layout-single .modal-image-area {
+    width: 100%; height: 100%; 
+    position: relative;
+    background-color: black;
+    display: flex; align-items: center; justify-content: center;
+}
+
+/* Bubbles */
+.counter-bubble {
+    position: absolute; bottom: 15px; left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white; padding: 5px 12px;
+    border-radius: 20px; font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-family: "TextSchrift", sans-serif; pointer-events: none;
+}
+
+.material-bubble {
+    position: absolute; top: 10px; right: 10px;
+    background-color: #2AE1E8; color: rgb(6,23,30);
+    padding: 4px 10px; border-radius: 12px;
+    font-size: 0.8rem; font-weight: bold;
+    font-family: "TextSchrift", sans-serif;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5); z-index: 5;
+}
 
 /* =========================================
    8. GALERIE AUSWAHL (ABGESCHLOSSEN.HTML) 
@@ -679,38 +791,6 @@ footer { background-color: rgba(40, 39, 42, 0.8); backdrop-filter: blur(10px); b
 /* Erfolgsmeldung Kontakt */
 .success-text { display: none; color: #2AE1E8; font-weight: bold; margin-top: 15px; font-size: 1.1rem; text-align: center; animation: fadeIn 0.5s ease; }
 
-/* =========================================
-   NEU: MINI-SLIDER IN KARTEN (PROJEKTE)
-   ========================================= */
-
-.card-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(6, 23, 30, 0.7); /* Dunkler Hintergrund für Kontrast */
-    color: #2AE1E8;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 5;
-    transition: all 0.2s;
-    font-size: 14px;
-    padding: 0;
-}
-
-.card-arrow:hover {
-    background-color: #2AE1E8;
-    color: rgb(6, 23, 30);
-    transform: translateY(-50%) scale(1.1);
-}
-
-.card-arrow.prev { left: 10px; }
-.card-arrow.next { right: 10px; }
 
 /* =========================================
    10. RESPONSIVE BREAKPOINTS
@@ -718,104 +798,83 @@ footer { background-color: rgba(40, 39, 42, 0.8); backdrop-filter: blur(10px); b
 
 /* --- 1. Desktop & Large Laptop (1281px - 1440px) --- */
 @media (max-width: 1440px) {
-    /* Anpassungen für sehr große Bildschirme, damit nichts zu breit wird */
-    .headsection, .gallery-grid, .split-layout {
-        max-width: 1280px;
-    }
+    .headsection, .gallery-grid, .split-layout { max-width: 1280px; }
 }
 
 /* --- 2. Tablet Landscape / Small Desktop (769px - 1280px) --- */
 @media (max-width: 1280px) {
-    /* Header: Schrift etwas kleiner */
     header h2 { font-size: 1.5rem; }
-    
-    /* Navigation: Sollte hier noch sichtbar sein, falls Platz reicht */
     nav ul li a { font-size: 1rem; }
-
-    /* Mission Grid enger zusammen */
     .mission-grid { gap: 30px; }
     .hero-content-centered h1 { font-size: 2.8rem; }
-    
-    /* Split Layout für Galerie */
     .preview-image { width: 120px; height: 120px; }
 }
 
 /* --- 3. Tablet Portrait (481px - 768px) --- */
-@media (max-width: 870px) {
-    /* NAVIGATION: Umschalten auf Burger-Menü */
+@media (max-width: 768px) {
     .burger-menu { display: block; }
-    
-    nav ul {
-        display: none; 
-        flex-direction: column;
-        position: absolute; 
-        top: 100%; right: 0; left: 0;
-        background-color: rgba(40, 39, 42, 0.98);
-        padding: 20px 0;
-        text-align: center;
-        border-top: 1px solid rgba(255,255,255,0.1);
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-    
+    nav ul { display: none; flex-direction: column; position: absolute; top: 100%; right: 0; left: 0; background-color: rgba(40, 39, 42, 0.98); padding: 20px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
     nav ul.active { display: flex; }
     nav ul li { margin: 15px 0; justify-content: center; }
-    nav ul li::after { content: none; } /* Trennstriche entfernen */
-
-    /* Mission Section untereinander */
+    nav ul li::after { content: none; } 
     .mission-grid { grid-template-columns: 1fr; gap: 40px; }
     .mission-text { text-align: center; }
     .mission-section { padding: 60px 20px; }
-
-    /* Hero Text kleiner */
     .hero-content-centered h1 { font-size: 2.2rem; }
     .hero-text-box { font-size: 1rem; }
-
-    /* Split Layout untereinander */
     .split-layout { flex-direction: column; height: auto; overflow: visible; }
     .split-box { padding: 30px; margin-bottom: 20px; min-height: 300px; }
     .preview-container { flex-direction: row; justify-content: center; margin-top: 10px; }
-    
-    /* Bottom Boxen untereinander */
     .bottom-box { min-width: 100%; margin-bottom: 20px; }
-
-    /* Modal Layout stacken */
     .modal-layout { flex-direction: column; }
     .modal-layout .modal-image-area { height: 350px; flex: none; }
     .modal-info-area { border-left: none; border-top: 1px solid rgba(255,255,255,0.1); }
-    
-    /* Über mich: Bilder Float entfernen */
     .intro-image.float-right { float: none; width: 100%; margin: 0 0 20px 0; }
-    
-    /* Text Slider Layouts anpassen */
     .layout-1.active { grid-template-columns: 1fr; }
     .layout-3.active { grid-template-columns: 1fr; grid-template-rows: auto; }
 }
 
 /* --- 4. Mobile Portrait (320px - 480px) --- */
 @media (max-width: 480px) {
-    /* Header noch kompakter */
     header h2 { font-size: 1.2rem; }
     .mylogo { height: 30px; }
-
-    /* Hero */
     .hero-content-centered h1 { font-size: 1.8rem; }
     .btn-primary, .btn-transparent { width: 100%; box-sizing: border-box; display: block; margin-bottom: 10px; }
     .button-group { flex-direction: column; width: 100%; }
-
-    /* Galerie Grid einspaltig */
     .gallery-grid { grid-template-columns: 1fr; }
-
-    /* Slider Pfeile anpassen für Touch */
     .slider-btn { width: 35px; height: 35px; }
     .slider-btn img { width: 15px; }
-
-    /* Kontakt Formular */
     .contact-wrapper { padding: 10px; }
-    
-    /* Split Layout Bilder kleiner */
     .preview-image { width: 80px; height: 80px; }
-    
-    /* Modal Bild kleiner */
     .modal-layout .modal-image-area { height: 250px; }
+}
+
+/* =========================================
+   11. MOBILE ANPASSUNGEN (MODAL DEAKTIVIEREN)
+   ========================================= */
+
+/* Standard: Beschreibung in der Karte ist unsichtbar (nur im Modal zu sehen) */
+.mobile-description { display: none; }
+
+/* AB 639px (Mobile): Strategiewechsel */
+@media (max-width: 639px) {
+    
+    /* 1. Klick-Indikator entfernen, da kein Modal aufgeht */
+    .project-card, .planning-card {
+        cursor: default !important;
+    }
+    .project-card:hover {
+        transform: none; /* Kein Zoom-Effekt mehr, stört beim Scrollen */
+        border-color: white; /* Rahmen bleibt weiß */
+    }
+
+    /* 2. Beschreibungstext sichtbar machen */
+    .mobile-description {
+        display: block;
+        padding: 15px;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1rem;
+        line-height: 1.5;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
 }

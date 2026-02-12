@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     const container = document.getElementById('planningContainer');
-    // Wir holen nur die Projekte mit Status 'planung'
     const planningProjects = images.filter(img => img.status === 'planung');
 
     if (planningProjects.length === 0) {
@@ -9,16 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         planningProjects.forEach((projekt, index) => {
             const card = document.createElement('div');
-            // Wir nutzen die Standard-Klasse 'project-card', damit das Design (Rahmen etc.) stimmt
             card.className = 'project-card planning-card';
             
             card.onclick = () => openModal(index);
 
             const typText = projekt.typ ? projekt.typ.toUpperCase() : '';
 
-            // HIER IST DIE ÄNDERUNG:
-            // Wir bauen die gleiche Struktur wie bei 'projekte.html' (Header Bar + Bild)
-            // Statt der Dauer zeigen wir oben rechts den Typ (Material) an.
             card.innerHTML = `
                 <div class="card-header-bar">
                     <span class="card-name">${projekt.titel}</span>
@@ -35,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* --- MODAL LOGIK (Bleibt unverändert) --- */
+    /* --- MODAL LOGIK --- */
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
     const modalTitle = document.getElementById('modalTitle');
@@ -49,6 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
 
     window.openModal = function(index) {
+        // NEU: Wenn Bildschirm kleiner oder gleich 639px, Modal NICHT öffnen!
+        if (window.innerWidth <= 639) {
+            return;
+        }
+
         currentIndex = index;
         updateModalContent();
         modal.showModal();

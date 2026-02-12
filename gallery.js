@@ -45,17 +45,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = document.createElement('div');
         card.className = 'project-card';
         
-        // Klick auf die GANZE Karte öffnet Modal (nur Desktop)
+        // Klick auf die GANZE Karte öffnet Modal (nur Desktop ab 640px)
         card.onclick = (e) => openModal(index);
 
         // HTML Struktur
         let imageHtml = `<img src="${allImages[0]}" alt="${projekt.titel}" class="card-main-img" style="object-position: ${projekt.align || 'center'}">`;
         
-        // Wenn mehr als 1 Bild -> Pfeile hinzufügen
+        // Wenn mehr als 1 Bild -> Pfeile hinzufügen (JETZT MIT DEINEN BILDERN)
         if (allImages.length > 1) {
             imageHtml += `
-                <button class="card-arrow prev"><i class="fa-solid fa-chevron-left"></i></button>
-                <button class="card-arrow next"><i class="fa-solid fa-chevron-right"></i></button>
+                <button class="card-arrow prev"><img src="./img/left-arrow-small.png" alt="Zurück"></button>
+                <button class="card-arrow next"><img src="./img/right-arrow-small.png" alt="Weiter"></button>
             `;
         }
 
@@ -116,15 +116,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalTime = document.getElementById('modalTime');
     const closeModalBtn = document.getElementById('closeModal');
     const imageCounter = document.getElementById('imageCounter');
-    const nextBtn = document.querySelector('.slider-btn.next'); // Selektor angepasst für Modal-Buttons
+    const nextBtn = document.querySelector('.slider-btn.next'); 
     const prevBtn = document.querySelector('.slider-btn.prev');
 
     let currentProjectImages = [];
     let currentImageIndex = 0;
 
     window.openModal = function(index) {
-        // Wenn Bildschirm kleiner als 768px, Modal NICHT öffnen!
-        if (window.innerWidth <= 768) {
+        // NEU: Wenn Bildschirm kleiner oder gleich 639px, Modal NICHT öffnen!
+        if (window.innerWidth <= 639) {
             return;
         }
 
