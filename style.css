@@ -427,6 +427,24 @@ main {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Slider Animation für die Startseite */
+@keyframes slideScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* -50% weil wir den Inhalt verdoppelt haben */
+}
+
+.image-track {
+    display: flex;
+    gap: 20px;
+    width: max-content; /* Wichtig, damit die Bilder nebeneinander bleiben */
+    animation: slideScroll 40s linear infinite; /* 40s Dauer, unendlich */
+}
+
+/* Slider stoppt, wenn man mit der Maus drüber fährt (optional) */
+.image-track:hover {
+    animation-play-state: paused;
+}
+
 /* =========================================
    6. STARTSEITE: MISSION & BOTTOM
    ========================================= */
