@@ -305,6 +305,10 @@ main {
     display: block;    
 }
 
+.mobile-description {
+    color: white;
+}
+
 /* =========================================
    5. STARTSEITE: HERO SECTION
    ========================================= */
@@ -675,6 +679,38 @@ footer { background-color: rgba(40, 39, 42, 0.8); backdrop-filter: blur(10px); b
 /* Erfolgsmeldung Kontakt */
 .success-text { display: none; color: #2AE1E8; font-weight: bold; margin-top: 15px; font-size: 1.1rem; text-align: center; animation: fadeIn 0.5s ease; }
 
+/* =========================================
+   NEU: MINI-SLIDER IN KARTEN (PROJEKTE)
+   ========================================= */
+
+.card-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(6, 23, 30, 0.7); /* Dunkler Hintergrund für Kontrast */
+    color: #2AE1E8;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: all 0.2s;
+    font-size: 14px;
+    padding: 0;
+}
+
+.card-arrow:hover {
+    background-color: #2AE1E8;
+    color: rgb(6, 23, 30);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.card-arrow.prev { left: 10px; }
+.card-arrow.next { right: 10px; }
 
 /* =========================================
    10. RESPONSIVE BREAKPOINTS

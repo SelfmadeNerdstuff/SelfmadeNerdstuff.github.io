@@ -31,11 +31,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     visibleProjects.forEach((projekt, index) => {
+        // Daten vorbereiten
+        const dauerText = projekt.dauer ? `<img src="./img/sanduhr.png" class="sanduhr-icon" alt="Dauer"> ${projekt.dauer}` : '';
+        const description = projekt.introText ? projekt.introText : "Keine Beschreibung verfügbar.";
+        
+        // Alle Bilder sammeln (Hauptbild + Galerie)
+        const allImages = [projekt.image];
+        if (projekt.galerie && projekt.galerie.length > 0) {
+            projekt.galerie.forEach(imgUrl => allImages.push(imgUrl));
+        }
+
+        // Karte bauen
         const card = document.createElement('div');
         card.className = 'project-card';
-        card.onclick = () => openModal(index);
+        
+        // Klick auf die GANZE Karte öffnet Modal (nur Desktop)
+        card.onclick = (e) => openModal(index);
 
-        const dauerText = projekt.dauer ? `<img src="./img/sanduhr.png" class="sanduhr-icon" alt="Dauer"> ${projekt.dauer}` : '';
+        // HTML Struktur
+        let imageHtml = `<img src="${allImages[0]}" alt="${projekt.titel}" class="card-main-img" style="object-position: ${projekt.align || 'center'}">`;
+        
+        // Wenn mehr als 1 Bild -> Pfeile hinzufügen
+        if (allImages.length > 1) {
+            imageHtml += `
+                <button class="card-arrow prev"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="card-arrow next"><i class="fa-solid fa-chevron-right"></i></button>
+            `;
+        }
 
         card.innerHTML = `
             <div class="card-header-bar">
@@ -43,12 +65,44 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="card-time">${dauerText}</span>
             </div>
             <div class="card-image-wrapper">
-                <img src="${projekt.image}" 
-                     alt="${projekt.titel}" 
-                     loading="lazy" 
-                     style="object-position: ${projekt.align || 'center'}">
+                ${imageHtml}
+            </div>
+            <div class="mobile-description">
+                ${description}
             </div>
         `;
+
+        // Event Listener für Mini-Slider (nur wenn Pfeile da sind)
+        if (allImages.length > 1) {
+            const imgElement = card.querySelector('.card-main-img');
+            const prevBtn = card.querySelector('.prev');
+            const nextBtn = card.querySelector('.next');
+            let currentImgIndex = 0;
+
+            // Funktion zum Bildwechseln
+            const switchImage = (direction) => {
+                if (direction === 'next') {
+                    currentImgIndex++;
+                    if (currentImgIndex >= allImages.length) currentImgIndex = 0;
+                } else {
+                    currentImgIndex--;
+                    if (currentImgIndex < 0) currentImgIndex = allImages.length - 1;
+                }
+                imgElement.src = allImages[currentImgIndex];
+            };
+
+            // Klick-Events (stopPropagation ist WICHTIG, damit nicht das Modal aufgeht!)
+            nextBtn.onclick = (e) => {
+                e.stopPropagation(); 
+                switchImage('next');
+            };
+
+            prevBtn.onclick = (e) => {
+                e.stopPropagation();
+                switchImage('prev');
+            };
+        }
+
         container.appendChild(card);
     });
 
@@ -61,20 +115,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalDesc = document.getElementById('modalDesc');
     const modalTime = document.getElementById('modalTime');
     const closeModalBtn = document.getElementById('closeModal');
-    
-    // NEU: Den Zähler holen
     const imageCounter = document.getElementById('imageCounter');
-
-    const nextBtn = document.querySelector('.next');
-    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.slider-btn.next'); // Selektor angepasst für Modal-Buttons
+    const prevBtn = document.querySelector('.slider-btn.prev');
 
     let currentProjectImages = [];
     let currentImageIndex = 0;
 
     window.openModal = function(index) {
+        // Wenn Bildschirm kleiner als 768px, Modal NICHT öffnen!
+        if (window.innerWidth <= 768) {
+            return;
+        }
+
         const projekt = visibleProjects[index];
 
-        // Bilder-Liste bauen: Hauptbild + Galerie
+        // Bilder-Liste bauen
         currentProjectImages = [projekt.image]; 
         if (projekt.galerie && projekt.galerie.length > 0) {
             currentProjectImages = currentProjectImages.concat(projekt.galerie);
@@ -93,16 +149,12 @@ document.addEventListener('DOMContentLoaded', () => {
             modalTime.style.display = "none";
         }
 
-        // --- NAVIGATION & ZÄHLER LOGIK ---
         if (currentProjectImages.length > 1) {
-            // Mehr als 1 Bild: Pfeile & Zähler anzeigen
             nextBtn.style.display = "flex"; 
             prevBtn.style.display = "flex";
-            
-            imageCounter.style.display = "block"; // Zähler sichtbar machen
-            updateCounter(); // Text aktualisieren (z.B. "1 / 3")
+            imageCounter.style.display = "block"; 
+            updateCounter(); 
         } else {
-            // Nur 1 Bild: Alles verstecken
             nextBtn.style.display = "none";
             prevBtn.style.display = "none";
             imageCounter.style.display = "none"; 
@@ -114,17 +166,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateModalImage() {
         modalImg.src = currentProjectImages[currentImageIndex];
-        // Jedes Mal, wenn das Bild wechselt, auch den Zähler aktualisieren
         if (currentProjectImages.length > 1) {
             updateCounter();
         }
     }
 
-    // Hilfsfunktion für den Zähler-Text
     function updateCounter() {
         imageCounter.innerText = `${currentImageIndex + 1} / ${currentProjectImages.length}`;
     }
 
+    // Modal Navigation
     nextBtn.onclick = () => {
         currentImageIndex++;
         if (currentImageIndex >= currentProjectImages.length) currentImageIndex = 0; 

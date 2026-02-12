@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     const container = document.getElementById('planningContainer');
+    // Wir holen nur die Projekte mit Status 'planung'
     const planningProjects = images.filter(img => img.status === 'planung');
 
     if (planningProjects.length === 0) {
@@ -8,26 +9,33 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         planningProjects.forEach((projekt, index) => {
             const card = document.createElement('div');
+            // Wir nutzen die Standard-Klasse 'project-card', damit das Design (Rahmen etc.) stimmt
             card.className = 'project-card planning-card';
             
             card.onclick = () => openModal(index);
 
             const typText = projekt.typ ? projekt.typ.toUpperCase() : '';
 
+            // HIER IST DIE ÄNDERUNG:
+            // Wir bauen die gleiche Struktur wie bei 'projekte.html' (Header Bar + Bild)
+            // Statt der Dauer zeigen wir oben rechts den Typ (Material) an.
             card.innerHTML = `
+                <div class="card-header-bar">
+                    <span class="card-name">${projekt.titel}</span>
+                    <span class="card-time" style="color: #2AE1E8; font-weight: bold;">${typText}</span>
+                </div>
                 <div class="card-image-wrapper">
                     <img src="${projekt.image}" 
                          alt="${projekt.titel}" 
                          loading="lazy" 
                          style="object-position: ${projekt.align || 'center'}">
-                    <span class="material-bubble">${typText}</span>
                 </div>
             `;
             container.appendChild(card);
         });
     }
 
-    /* --- MODAL LOGIK --- */
+    /* --- MODAL LOGIK (Bleibt unverändert) --- */
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
     const modalTitle = document.getElementById('modalTitle');
