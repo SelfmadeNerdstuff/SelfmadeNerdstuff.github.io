@@ -836,28 +836,97 @@ footer { background-color: rgba(40, 39, 42, 0.8); backdrop-filter: blur(10px); b
     .preview-image { width: 120px; height: 120px; }
 }
 
-/* --- 3. Tablet Portrait (481px - 768px) --- */
+/* --- 3. Mobile & Tablet Anpassung (Alles unter 870px) --- */
 @media (max-width: 870px) {
+    /* 1. Navigation auf Burger umstellen */
     .burger-menu { display: block; }
-    nav ul { display: none; flex-direction: column; position: absolute; top: 100%; right: 0; left: 0; background-color: rgba(40, 39, 42, 0.98); padding: 20px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+    
+    nav ul { 
+        display: none; flex-direction: column; 
+        position: absolute; top: 100%; right: 0; left: 0; 
+        background-color: rgba(40, 39, 42, 0.98); 
+        padding: 20px 0; text-align: center; 
+        border-top: 1px solid rgba(255,255,255,0.1); 
+        border-bottom: 1px solid rgba(255,255,255,0.1); 
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5); 
+    }
     nav ul.active { display: flex; }
     nav ul li { margin: 15px 0; justify-content: center; }
     nav ul li::after { content: none; } 
+
+    /* 2. Andere Seiten-Anpassungen (Mission, Hero etc.) */
     .mission-grid { grid-template-columns: 1fr; gap: 40px; }
     .mission-text { text-align: center; }
     .mission-section { padding: 60px 20px; }
     .hero-content-centered h1 { font-size: 2.2rem; }
     .hero-text-box { font-size: 1rem; }
-    .split-layout { flex-direction: column; height: auto; overflow: visible; }
-    .split-box { padding: 30px; margin-bottom: 20px; min-height: 300px; }
-    .preview-container { flex-direction: row; justify-content: center; margin-top: 10px; }
     .bottom-box { min-width: 100%; margin-bottom: 20px; }
+    .intro-image.float-right { float: none; width: 100%; margin: 0 0 20px 0; }
+    
+    /* 3. Slider & Modal Anpassungen */
     .modal-layout { flex-direction: column; }
     .modal-layout .modal-image-area { height: 350px; flex: none; }
     .modal-info-area { border-left: none; border-top: 1px solid rgba(255,255,255,0.1); }
-    .intro-image.float-right { float: none; width: 100%; margin: 0 0 20px 0; }
     .layout-1.active { grid-template-columns: 1fr; }
     .layout-3.active { grid-template-columns: 1fr; grid-template-rows: auto; }
+
+    /* --- WICHTIG: DER "NO-SCROLL" FIX FÜR DIE GALERIE-AUSWAHL --- */
+    
+    /* Container nutzt 100% der verfügbaren Höhe (kein Auto, kein Scroll) */
+    .split-layout {
+        flex-direction: column; 
+        padding: 10px; 
+        gap: 10px;     
+        height: 100%;  
+        overflow: hidden; 
+    }
+    
+    .split-box {
+        /* flex: 1 bedeutet: Teile den Platz gerecht auf (50/50), egal wie viel da ist */
+        flex: 1; 
+        min-height: 0; /* WICHTIG: Erlaubt der Box, kleiner zu werden als ihr Inhalt */
+        padding: 10px; /* Weniger Polsterung */
+        justify-content: center;
+        margin-bottom: 0; /* Kein Rand nach unten, das macht das gap */
+    }
+
+    /* Inhalte schrumpfen, damit sie reinpassen */
+    .box-content h2 {
+        font-size: 1.5rem; /* Kleinere Schrift */
+        margin-bottom: 5px;
+    }
+
+    .box-content p {
+        font-size: 0.9rem;
+        margin-bottom: 10px; 
+    }
+
+    /* Bilder nebeneinander und kleiner */
+    .preview-container {
+        flex-direction: row; 
+        flex-wrap: nowrap;   
+        justify-content: center;
+        gap: 10px;
+        margin-top: 0;
+    }
+
+    .preview-image {
+        /* Fixe, kleine Größe für Mobile, damit die Box nicht gesprengt wird */
+        width: 70px;  
+        height: 70px;
+        min-width: 50px;
+        min-height: 50px;
+        flex-shrink: 1; /* Darf schrumpfen wenn nötig */
+    }
+    
+    /* Falls 3 Bilder zu viel sind auf winzigen Handys, zeige nur 2 */
+    .preview-image:nth-child(3) {
+        display: none; 
+    }
+    /* Auf etwas größeren Handys das 3. Bild wieder zeigen */
+    @media (min-height: 700px) {
+        .preview-image:nth-child(3) { display: block; }
+    }
 }
 
 /* --- 4. Mobile Portrait (320px - 480px) --- */
