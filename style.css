@@ -837,7 +837,7 @@ footer { background-color: rgba(40, 39, 42, 0.8); backdrop-filter: blur(10px); b
 }
 
 /* --- 3. Tablet Portrait (481px - 768px) --- */
-@media (max-width: 768px) {
+@media (max-width: 870px) {
     .burger-menu { display: block; }
     nav ul { display: none; flex-direction: column; position: absolute; top: 100%; right: 0; left: 0; background-color: rgba(40, 39, 42, 0.98); padding: 20px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
     nav ul.active { display: flex; }
