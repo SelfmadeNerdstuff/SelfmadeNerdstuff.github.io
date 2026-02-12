@@ -305,6 +305,11 @@ main {
     display: block;    
 }
 
+.mobile-description {
+    color: white;
+    padding: 8px 12px;
+}
+
 /* =========================================
    NEU: MINI-SLIDER IN KARTEN (PROJEKTE)
    ========================================= */
@@ -675,7 +680,10 @@ input:focus, textarea:focus { border-color: #2AE1E8; }
 .modal { padding: 0; border: none; border-radius: 12px; background-color: rgb(40, 39, 42); color: white; max-width: 1440px; width: 90%; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 .close-btn { position: absolute; top: 15px; right: 15px; background: none; border: none; color: rgba(255,255,255,0.6); font-size: 24px; cursor: pointer; z-index: 10; transition: color 0.3s; }
 .close-btn:hover { color: white; }
-
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.85); /* 85% Schwarz - schön dunkel */
+    backdrop-filter: blur(5px);            /* Optional: Macht den Hintergrund unscharf (Milchglas) */
+}
 /* Modal Layouts */
 .modal-layout { 
     display: flex; 
@@ -847,6 +855,23 @@ footer { background-color: rgba(40, 39, 42, 0.8); backdrop-filter: blur(10px); b
     .contact-wrapper { padding: 10px; }
     .preview-image { width: 80px; height: 80px; }
     .modal-layout .modal-image-area { height: 250px; }
+
+    /* --- NEU: BILDER ANPASSUNG FÜR HANDY --- */
+    .card-image-wrapper {
+        /* Vorher war es 4/3. 
+           1/1 (Quadrat) gibt mehr Höhe. 
+           4/5 wäre noch höher (Hochformat). 
+           Wir nehmen 1/1 als gute Balance. */
+        aspect-ratio: 1 / 1; 
+    }
+
+    .card-image-wrapper img {
+        /* contain = Bild wird komplett gezeigt, nichts abgeschnitten */
+        object-fit: contain; 
+        width: 100%;
+        height: 100%;
+        /* Hintergrund ist ja eh schwarz, also sieht das gut aus */
+    }
 }
 
 /* =========================================
