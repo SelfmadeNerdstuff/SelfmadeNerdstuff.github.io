@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über mich | Selfmade Nerdstuff</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <section class="headsection">
+            <a href="./index.html">
+                <img class="mylogo" src="./img/logo.svg" alt="Logo">
+                <h2>Selfmade Nerdstuff</h2>
+            </a>
+
+            <nav>
+                <div class="burger-menu" id="burgerMenu">
+                    <img src="./img/burger-menu.png" alt="Menü">
+                </div>
+                <ul id="navLinks">
+                    <li><a href="./index.html">Startseite</a></li>
+                    <li><a href="./abgeschlossen.html">Galerie</a></li>
+                    <li><a href="./planung.html">Warteschlange</a></li>
+                    <li><a href="./ueber-mich.html">Über Mich</a></li>
+                    <li><a href="./kontakt.html">Kontakt</a></li>
+                </ul>                
+            </nav>    
+        </section>
+    </header>
+    
+    <main>
+        <section class="about-header">
+            <div class="text-box about-intro clearfix">
+                <h1 id="pageTitle" style="margin-top:0;">Vom Gamer zum Maker</h1>
+                
+                <img src="./img/500kb.png" alt="Profilbild" class="intro-image float-right">                
+                
+                <h3>Weil das Gebotene nicht meinen Ansprüchen gerecht war</h3>
+                <p>
+                    Ich liebe Anime- und Gaming-Figuren. Aber oft waren sie mir zu teuer oder die Qualität hat einfach nicht gestimmt – oder beides. 
+                    Daher habe ich beschlossen, das Problem selbst anzugehen und meine Figuren und Deko einfach selbst herzustellen! Bessere Qualität und günstiger.
+                </p>
+
+                <h3>Aller Anfang ist... im Schuppen?</h3>
+                <p>
+                    2022 zog mein erster Resin-Drucker ein. Aber nicht ins gemütliche Wohnzimmer, sondern direkt in den Schuppen. 
+                    Sicherheit geht vor – die giftigen Dämpfe wollte ich nicht im Haus haben.
+                </p>
+                <p>
+                    Das erste Jahr war mein persönliches „Lehrjahr“: Ich habe verschiedene Einstellungen ausprobiert, erfahren wie wichtig konstante Temperaturen für Resin sind und den allgemeinen Arbeitsprozess erlernt. 
+                    Da es konstante Wärme (25-30°C) braucht, habe ich gebastelt: Isolierte Boxen mit Heizungen wurden gebaut und ich habe den perfekten Workflow für mich entwickelt, um trotz norddeutscher Temperaturen gute Ergebnisse zu liefern.
+                </p>
+
+                <h3>2025: Zeit für Neues</h3>
+                <p>
+                    Mit der Zeit habe ich mich auch immer mehr für andere Drucktechniken interessiert und so kam 2025 ein FDM-Drucker dazu. 
+                    Keine giftigen Gase, weniger wetterabhängig und perfekt für größere, aber gröbere Deko-Objekte. 
+                    Jetzt kann ich je nach Projekt entscheiden: Feine Details in Resin oder stabile Struktur in PLA.
+                </p>
+            </div>
+        </section>
+
+        <section class="project-preview-section">
+            <h2>Ein Blick in die Vitrine</h2>
+            <div class="image-slider-container">
+                <button class="slider-btn prev" id="imgPrev">
+                    <img src="./img/linker-pfeil.png" alt="Zurück">
+                </button>
+                
+                <div class="image-track-wrapper">
+                    <div class="image-track" id="imageTrack"></div>
+                </div>
+
+                <button class="slider-btn next" id="imgNext">
+                    <img src="./img/rechter-pfeil.png" alt="Weiter">
+                </button>
+            </div>
+        </section>
+
+        <section class="about-slider-section">
+            <h2>Der Nerd hinter den Drucken</h2>
+            
+            <div class="text-slider-wrapper">
+                <button class="slider-btn prev" id="aboutPrev">
+                    <img src="./img/linker-pfeil.png" alt="Zurück">
+                </button>
+
+                <div class="text-slider-content">
+                    
+                    <div class="text-slide layout-1 active">
+                        <div class="slide-text">
+                            <h3>Gamer der ersten Stunde</h3>
+                            <p>
+                                Meine ersten Gaming-Erfahrungen sammelte ich auf dem Amiga, mit lauter Pixel-Games von Disketten. 
+                                Die erste eigene Konsole war der SEGA – mit Sonic als Dauerbrenner. Gefolgt vom Super Nintendo, der sehr viele tolle Erinnerungen geschaffen hat.
+                            </p>
+                            <p>
+                                Die Playstation 1 habe ich nur bei Freunden gespielt, da ich in der Zeit meinen ersten eigenen PC bekommen habe und mich bei Diablo 2 austoben durfte. 
+                            </p>
+                        </div>
+                        <div class="slide-images-col">
+                            <img src="./img/500kb.png" alt="Gaming Bild 1">
+                            <img src="./img/500kb.png" alt="Gaming Bild 2">
+                        </div>
+                    </div>
+
+                    <div class="text-slide layout-2">
+                        <div class="slide-text-full clearfix">
+                            <img src="./img/500kb.png" alt="Tattoo Bild" class="float-image-right">
+                            <h3>Leidenschaft, die unter die Haut geht</h3>
+                            <p>
+                                Neben dem Zocken brenne ich für Filme, Serien und vor allem Anime. Letzteres hat mich über die Jahre stets begleitet und geprägt.
+                            </p>
+                            <p>
+                                Das geht bei mir buchstäblich unter die Haut: Meine Beine sind komplett mit meinen Lieblings-Animes tätowiert, womit ich nochmal verdeutlichen möchte, wie sehr ich für dieses Medium brenne.
+                            </p>
+                            <p>
+                                Wenn ich also eine Figur drucke, dann nicht als Job, sondern aus echter Fan-Liebe. Ich weiß genau, worauf es bei den Charakteren ankommt.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="text-slide layout-3">
+                        <div class="grid-item img-item"><img src="./img/500kb.png" alt="Analog 1"></div>
+                        <div class="grid-item img-item"><img src="./img/500kb.png" alt="Analog 2"></div>
+                        <div class="grid-item img-item"><img src="./img/500kb.png" alt="Analog 3"></div>
+                        <div class="grid-item text-item">
+                            <h3>Analog & Technik</h3>
+                            <p>
+                                Neben digitalen Medien liebe ich Tabletops (Herr der Ringe) und komplexe Brettspiele wie Zombicide.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="slider-btn next" id="aboutNext">
+                    <img src="./img/rechter-pfeil.png" alt="Weiter">
+                </button>
+            </div>
+            
+            <div class="slider-dots" id="sliderDots"></div>
+        </section>
+
+        <section class="video-section">
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <i class="fa-solid fa-play"></i>
+                    <p>Hier folgt bald ein Video</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-cta">
+            <div class="text-box cta-box">
+                <h2>Lust auf Selfmade Nerdstuff?</h2>
+                <p>
+                    Schau dich gerne in meiner Galerie um oder wirf einen Blick in die Warteschlange.
+                </p>
+                <a href="./kontakt.html" class="submit-btn cta-btn">Schreib mir!</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="copyright">© 2026 Selfmade Nerdstuff</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    <script src="about.js"></script>
+
+</body>
+</html>

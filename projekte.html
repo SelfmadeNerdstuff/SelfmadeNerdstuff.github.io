@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekte | Selfmade Nerdstuff</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <section class="headsection">
+            <a href="./index.html">
+                <img class="mylogo" src="./img/logo.svg" alt="Logo">
+                <h2>Selfmade Nerdstuff</h2>
+            </a>
+
+            <nav>
+                <div class="burger-menu" id="burgerMenu">
+                    <img src="./img/burger-menu.png" alt="Menü">
+                </div>
+                <ul id="navLinks">
+                    <li><a href="./index.html">Startseite</a></li>
+                    <li><a href="./abgeschlossen.html">Galerie</a></li>
+                    <li><a href="./planung.html">Warteschlange</a></li>
+                    <li><a href="./ueber-mich.html">Über Mich</a></li>
+                    <li><a href="./kontakt.html">Kontakt</a></li>
+                </ul>                
+            </nav>    
+        </section>
+    </header>
+
+    <main>
+        <section class="gallery-header">
+            <h1 id="pageTitle">Lade Projekte...</h1>
+            <div class="text-box">
+                <p id="pageIntro">Hier findest du eine Übersicht meiner Arbeiten.</p>
+            </div>
+        </section>
+
+        <div id="galleryContainer" class="gallery-grid">
+            </div>
+    </main>
+
+    <dialog id="imageModal" class="modal">
+        <div class="modal-content">
+            <button id="closeModal" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="modal-layout">
+                
+            <div class="modal-image-area">
+                <img id="modalImage" src="" alt="Großansicht">
+                
+                <button class="slider-btn prev">
+                    <img src="./img/linker-pfeil.png" alt="Zurück">
+                </button>
+                <button class="slider-btn next">
+                    <img src="./img/rechter-pfeil.png" alt="Weiter">
+                </button>
+
+                <span id="imageCounter" class="counter-bubble"></span>
+            </div>
+            
+                <div class="modal-info-area">
+                    <h2 id="modalTitle">Titel</h2>
+                    <p id="modalDesc">Beschreibung...</p>
+                    
+                    <span id="modalTime" class="time-badge">
+                        <img src="./img/sanduhr.png" class="sanduhr-icon" alt="Dauer"> 
+                        <span></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <footer>
+        <div class="footer-content">
+            <p class="copyright">© 2026 Selfmade Nerdstuff</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    <script src="gallery.js"></script> 
+
+</body>
+</html>

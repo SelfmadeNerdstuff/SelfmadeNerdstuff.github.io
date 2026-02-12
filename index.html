@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selfmade Nerdstuff</title>
+    <link rel="icon" href="./img/favicon.svg">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <section class="headsection">
+            <a href="./index.html">
+                <img class="mylogo" src="./img/logo.svg" alt="Logo">
+                <h2>Selfmade Nerdstuff</h2>
+            </a>
+
+            <nav>
+                <div class="burger-menu" id="burgerMenu">
+                    <img src="./img/burger-menu.png" alt="Menü">
+                </div>
+                <ul id="navLinks">
+                    <li><a href="./index.html">Startseite</a></li>
+                    <li><a href="./abgeschlossen.html">Galerie</a></li>
+                    <li><a href="./planung.html">Warteschlange</a></li>
+                    <li><a href="./ueber-mich.html">Über Mich</a></li>
+                    <li><a href="./kontakt.html">Kontakt</a></li>
+                </ul>                
+            </nav>    
+        </section>
+    </header>
+
+    <main class="startseite">
+
+        <section class="hero-section" id="hero">
+            
+            <div class="hero-content-centered">
+                <h1>Willkommen auf deiner digitalen Werkbank.</h1>
+                
+                <div class="hero-text-box">
+                    <p>Hier entstehen maßgeschneiderte Lösungen durch präzises Handwerk in Strategie, Design und Technologie.</p>
+                </div>
+                
+                <div class="button-group">
+                    <a href="./kontakt.html" class="btn-primary">Kontakt</a>
+                    <a href="./abgeschlossen.html" class="btn-transparent">Zur Galerie</a>
+                </div>
+            </div>
+
+            <a href="#mission" class="scroll-arrow">
+                <img src="./img/down-arrow.png" alt="Nach unten scrollen">
+            </a>
+
+        </section>
+
+        <section id="mission" class="mission-section">
+            <div class="mission-grid">
+                
+                <div class="text-box mission-text">
+                    <h2>Meine Mission</h2>
+                    <p>
+                        [Hier kommt dein Mission-Statement hin. Zum Beispiel: Wir verbinden die Nostalgie klassischer Gaming-Helden mit modernster 3D-Druck-Technologie. Jeder Druck ist ein Unikat, gefertigt mit Leidenschaft und Präzision.]
+                    </p>
+                    <p>
+                        Qualität steht an erster Stelle – denn Nerdstuff ist mehr als nur Deko. Es ist eine Lebenseinstellung.
+                    </p>
+                </div>
+
+                <div class="mission-image-wrapper">
+                    <img src="./img/500kb.png" alt="Mission Bild" class="mission-img">
+                </div>
+
+            </div>
+        </section>
+
+        <section class="project-preview-section" style="padding-top: 0;">
+            
+            <div class="image-slider-container">
+                <div class="image-track-wrapper">
+                    <div class="image-track" id="randomTrack">
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bottom-section">
+            <div class="container">
+                <div class="bottom-grid">
+                    
+                    <div class="text-box bottom-box cta-highlight">
+                        <h3>Was ist möglich?</h3>
+                        <p>
+                            Du möchtest wissen, woran ich gerade arbeite oder was ich schon gebaut habe?
+                        </p>
+                        <ul class="link-list">
+                            <li><a href="./abgeschlossen.html">➜ Zur Galerie</a></li>
+                            <li><a href="./planung.html">➜ Zur Warteschlange</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="text-box bottom-box cta-highlight">
+                        <h3>Dein Projekt starten</h3>
+                        <p>
+                            Hast du eine Idee? Lass uns darüber sprechen, wie wir sie in Resin oder PLA umsetzen können.
+                        </p>
+                        <a href="./kontakt.html" class="btn-primary">Jetzt anfragen</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/selfmadenerdstuff?igsh=emRxYXQ5bXRobDhi" target="_blank" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@selfmadenerdstuff?_r=1&_t=ZG-93QKLPCcbzM" target="_blank" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+
+            <div class="footer-text">
+                <p class="copyright">© 2026 Selfmade Nerdstuff</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="data.js"></script>
+    <script src="startseite.js"></script>
+
+</body>
+</html>
