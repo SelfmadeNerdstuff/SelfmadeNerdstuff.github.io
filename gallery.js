@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
         visibleProjects = images.filter(img => img.typ === filterTyp && img.status === 'abgeschlossen');
         if (filterTyp === 'resin') {
             pageTitle.innerText = 'Resin Projekte';
-            pageIntro.innerText = 'Hier siehst du meine detaillierten Kunstharz-Arbeiten.';
+            pageIntro.innerHTML = `Kunstharz (Resin) ist das Material der Wahl, wenn es um absolute Präzision geht. Hier härtet UV-Licht flüssiges Harz aus, wodurch selbst winzigste Texturen, feine Gesichtszüge und messerscharfe Kanten ohne sichtbare Schichtlinien entstehen.<br><br>Egal, ob du ein erfahrener Tabletop-Veteran bist, der makellose Miniaturen sucht, oder einfach dein Lieblings-Design als perfektes Vitrinen-Modell bewundern willst: Hier zeige ich dir, was technisch auf High-End-Niveau möglich ist.<br><br><i>(Tipp: Die Figuren kommen in der Regel im cleanen Grau aus dem Drucker – die perfekte Leinwand für deine eigenen Bemalungen!)</i>`;
         } else if (filterTyp === 'fdm') {
             pageTitle.innerText = 'FDM Projekte';
-            pageIntro.innerText = 'Hier sind meine FDM-Druckwerke.';
+            pageIntro.innerHTML = `FDM (Filament-Druck) ist das perfekte Verfahren für alles, was robust, groß oder funktional sein muss. Hier wird hochwertiger Kunststoff geschmolzen und Schicht für Schicht präzise aufgetragen.<br><br>Das macht diese Technik ideal für Cosplay-Accessoire, Tabletop-Gelände oder große Deko-Objekte. In dieser Galerie präsentiere ich dir meine FDM-Projekte bei denen oft auch die Farbe des Materials flexibel wählbar ist!`;
         }
     } else {
         visibleProjects = images.filter(img => img.status === 'abgeschlossen');
