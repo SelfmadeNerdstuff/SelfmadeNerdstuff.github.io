@@ -1,5 +1,5 @@
 // =========================================
-// KONTAKTFORMULAR LOGIK
+// KONTAKTFORMULAR LOGIK (Web3Forms)
 // =========================================
 
 const contactForm = document.getElementById('contactForm');
@@ -9,7 +9,7 @@ const successMessage = document.getElementById('successMessage');
 // Wir prüfen erst, ob das Formular auf der Seite existiert (Sicherheitscheck)
 if (contactForm) {
 
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault(); // Stoppt das normale Neuladen der Seite
 
         // 1. Feedback geben: Button ändern & sperren
@@ -21,30 +21,31 @@ if (contactForm) {
         // 2. Daten sammeln
         const formData = new FormData(contactForm);
 
-        // 3. Daten im Hintergrund senden (AJAX)
-        fetch(contactForm.action, {
-            method: 'POST',
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-        })
-        .then(response => {
+        try {
+            // 3. Daten im Hintergrund senden (AJAX an Web3Forms)
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+
             if (response.ok) {
                 // ERFOLG:
                 contactForm.reset();            // Formular leeren
                 submitBtn.style.display = 'none'; // Button weg
                 successMessage.style.display = 'block'; // Text da
             } else {
-                // Fehler vom Server (z.B. Spam-Schutz)
-                alert("Hoppla, da gab es ein Problem beim Senden. Bitte versuche es später nochmal.");
+                // Fehler vom Server (z.B. falscher Key)
+                alert("Hoppla, da gab es ein Problem beim Senden: " + data.message);
                 resetButton(originalText);
             }
-        })
-        .catch(error => {
+        } catch (error) {
             // Netzwerkfehler (z.B. kein Internet)
             console.error('Fehler:', error);
             alert("Verbindungsfehler. Bitte prüfe deine Internetverbindung.");
             resetButton(originalText);
-        });
+        }
     });
 
     // Hilfsfunktion: Button wiederherstellen, falls was schiefgeht
