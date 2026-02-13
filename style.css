@@ -1381,6 +1381,42 @@ footer {
     animation: fadeIn 0.5s ease;
 }
 
+/* =========================================
+   NEU: ZURÜCK-BUTTON (PROJEKTE.HTML)
+   ========================================= */
+
+.back-link-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 30px 20px 0 20px;
+    display: flex;
+    justify-content: flex-start; /* Setzt den Button nach ganz links */
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.back-link img {
+    width: 60px; /* Schöne Größe, damit man auch das "BACK" gut lesen kann */
+    height: auto;
+    filter: invert(1); /* Macht das schwarze Icon komplett weiß */
+    transition: filter 0.3s;
+}
+
+.back-link:hover {
+    transform: translateX(-8px); /* Bewegt den Button beim Hover leicht nach links */
+}
+
+.back-link:hover img {
+    /* Färbt das Icon beim Hover in dein typisches Türkis */
+    filter: invert(75%) sepia(51%) saturate(1067%) hue-rotate(130deg) brightness(99%) contrast(92%);
+}
+
 @media (max-width: 1440px) {
     .headsection, .gallery-grid, .split-layout {
         max-width: 1280px;
