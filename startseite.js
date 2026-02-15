@@ -1,34 +1,61 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    // =========================================
+    // 1. ZUFÄLLIGER BILDER-TRACK (Galerie-Vorschau)
+    // =========================================
     const track = document.getElementById('randomTrack');
 
-    if (!track) return; // Abbruch, falls Element nicht gefunden wird
+    if (track) {
+        let finishedProjects = images.filter(img => img.status === 'abgeschlossen');
+        finishedProjects.sort(() => Math.random() - 0.5);
 
-    // 1. Alle abgeschlossenen Projekte holen (Resin & FDM)
-    let finishedProjects = images.filter(img => img.status === 'abgeschlossen');
+        finishedProjects.forEach(projekt => {
+            const img = document.createElement('img');
+            img.src = projekt.image;
+            img.alt = projekt.titel;
+            img.className = 'preview-slide-img'; 
+            
+            if (projekt.align) {
+                img.style.objectPosition = projekt.align;
+            }
+            
+            track.appendChild(img);
+        });
 
-    // 2. Die Liste zufällig mischen
-    finishedProjects.sort(() => Math.random() - 0.5);
+        const originalContent = track.innerHTML;
+        track.innerHTML += originalContent;
+    }
 
-    // 3. Bilder in den Slider einfügen
-    finishedProjects.forEach(projekt => {
-        const img = document.createElement('img');
-        img.src = projekt.image;
-        img.alt = projekt.titel;
-        img.className = 'preview-slide-img'; 
-        
-        // HIER WAR DAS PROBLEM: Der Align-Befehl fehlte.
-        // Jetzt prüfen wir: Hat das Bild eine Ausrichtung (z.B. 'top')?
-        if (projekt.align) {
-            img.style.objectPosition = projekt.align;
+    // =========================================
+    // 2. KUNDENREZENSIONEN SLIDER (Testimonials)
+    // =========================================
+    const testiSlides = document.querySelectorAll('.testimonial-slide');
+    const testiNext = document.getElementById('testiNext');
+    const testiPrev = document.getElementById('testiPrev');
+
+    if (testiSlides.length > 0) {
+        let testiIndex = 0;
+
+        function updateTestiSlider() {
+            testiSlides.forEach(slide => slide.classList.remove('active'));
+            testiSlides[testiIndex].classList.add('active');
         }
-        
-        track.appendChild(img);
-    });
 
-    // 4. Automatische Slider-Logik (Klonen für flüssigen Endlos-Effekt)
-    // Wir klonen die Bilder, damit der Slider niemals "leer" läuft
-    const originalContent = track.innerHTML;
-    track.innerHTML += originalContent;
+        if (testiNext) {
+            testiNext.onclick = () => {
+                testiIndex++;
+                if (testiIndex >= testiSlides.length) testiIndex = 0;
+                updateTestiSlider();
+            };
+        }
+
+        if (testiPrev) {
+            testiPrev.onclick = () => {
+                testiIndex--;
+                if (testiIndex < 0) testiIndex = testiSlides.length - 1;
+                updateTestiSlider();
+            };
+        }
+    }
 
 });
