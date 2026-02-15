@@ -6,9 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('randomTrack');
 
     if (track) {
+        // 1. Alle abgeschlossenen Projekte holen
         let finishedProjects = images.filter(img => img.status === 'abgeschlossen');
+
+        // 2. Zufällig mischen
         finishedProjects.sort(() => Math.random() - 0.5);
 
+        // 3. Bilder einfügen
         finishedProjects.forEach(projekt => {
             const img = document.createElement('img');
             img.src = projekt.image;
@@ -18,10 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (projekt.align) {
                 img.style.objectPosition = projekt.align;
             }
-            
             track.appendChild(img);
         });
 
+        // 4. Klonen für die flüssige CSS-Endlos-Animation
         const originalContent = track.innerHTML;
         track.innerHTML += originalContent;
     }
@@ -57,5 +61,4 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         }
     }
-
 });

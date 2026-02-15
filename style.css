@@ -453,7 +453,7 @@ main {
     display: flex;
     gap: 20px;
     width: max-content;
-    animation: slideScroll 40s linear infinite;
+    animation: slideScroll 30s linear infinite;
 }
 
 .image-track:hover {
@@ -1632,14 +1632,21 @@ footer {
         border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
     .layout-1.active {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         height: auto;
+    }
+    .layout-1.active .slide-images-col {
+        order: -1; 
+        margin-bottom: 20px;
+        width: 100%;
     }
     .slide-images-col {
         height: auto;
     }
     .slide-images-col img {
         height: 250px;
+        width: 100%;
+        object-fit: cover;
     }
     .layout-3.active {
         grid-template-columns: 1fr;
@@ -1717,8 +1724,6 @@ footer {
     .text-slider-content {
         padding: 30px 20px;
     }
-    
-    /* --- TESTIMONIALS MOBILE FIX --- */
     .testimonial-slider-content {
         padding: 30px 20px;
     }

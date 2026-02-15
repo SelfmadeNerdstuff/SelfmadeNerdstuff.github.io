@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     /* =========================================
-       1. BILD SLIDER (RESIN PREVIEW) - Automatisch
+       1. BILD SLIDER (RESIN PREVIEW) - Automatisch (CSS)
        ========================================= */
     const imageTrack = document.getElementById('imageTrack');
 
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 imgEl.alt = projekt.titel;
                 imgEl.className = 'preview-slide-img';
                 
-                // Align beachten (wie auf der Startseite)
+                // Align beachten
                 if (projekt.align) {
                     imgEl.style.objectPosition = projekt.align;
                 }
@@ -25,8 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 imageTrack.appendChild(imgEl);
             });
 
-            // 1c. Klonen für die Endlos-Animation (CSS Marquee)
-            // Wir verdoppeln den Inhalt, damit keine Lücke entsteht
+            // 1c. Klonen für die CSS-Endlos-Animation
             const originalContent = imageTrack.innerHTML;
             imageTrack.innerHTML += originalContent;
 
@@ -34,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
             imageTrack.innerHTML = '<p style="color:white; padding:20px;">Keine Vorschau verfügbar.</p>';
         }
     }
-
 
     /* =========================================
        2. TEXT SLIDER (LAYOUTS) - Manuell mit Pfeilen
@@ -58,11 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const dots = document.querySelectorAll('.dot');
 
         function updateTextSlider() {
-            // Alle ausblenden
             slides.forEach(slide => slide.classList.remove('active'));
             dots.forEach(dot => dot.classList.remove('active'));
 
-            // Aktuellen einblenden
             slides[textIndex].classList.add('active');
             dots[textIndex].classList.add('active');
         }
