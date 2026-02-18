@@ -12,27 +12,7 @@
 
 <body>
 
-    <header>
-        <section class="headsection">
-            <a href="./index.html">
-                <img class="mylogo" src="./img/logo.svg" alt="Logo">
-                <h2>Selfmade Nerdstuff</h2>
-            </a>
-
-            <nav>
-                <div class="burger-menu" id="burgerMenu">
-                    <img src="./img/burger-menu.png" alt="Menü">
-                </div>
-                <ul id="navLinks">
-                    <li><a href="./index.html">Startseite</a></li>
-                    <li><a href="./abgeschlossen.html">Galerie</a></li>
-                    <li><a href="./planung.html">Kommende Projekte</a></li>
-                    <li><a href="./ueber-mich.html">Über Mich</a></li>
-                    <li><a href="./kontakt.html">Kontakt</a></li>
-                </ul>                
-            </nav>    
-        </section>
-    </header>
+<header id="header-placeholder"></header>
 
     <main class="startseite">
 
@@ -74,7 +54,7 @@
                 </div>
 
                 <div class="mission-image-wrapper">
-                    <img src="./img/500kb.png" alt="Mission Bild" class="mission-img">
+                    <img src="./img/ueber-mich/ich-filament.jpg" alt="Mission Bild" class="mission-img">
                 </div>
 
             </div>
@@ -90,7 +70,7 @@
             </div>
         </section>
 
-<section id="roadmap" class="roadmap-section">
+        <section id="roadmap" class="roadmap-section">
             <div class="container roadmap-container">
                 <h2 class="roadmap-title">Dein Weg zum eigenen Projekt<br><span style="color: #2AE1E8;">So einfach geht's!</span></h2>
 
@@ -153,7 +133,7 @@
             </div>
         </section>
 
-    <section class="testimonial-section">
+        <section class="testimonial-section">
             <div class="container testimonial-container">
                 <h2 class="roadmap-title">Was meine Kunden sagen</h2>
 
@@ -171,7 +151,7 @@
                                 <div class="testimonial-author">Laura Z.</div>
                             </div>
                             <div class="testimonial-image">
-                                <img src="./img/500kb.png" alt="Kundenbild 1">
+                                <img src="./img/rezensionen/becher-drg.jpg" alt="Kundenbild 1">
                             </div>
                         </div>
 
@@ -191,7 +171,37 @@
                                 <div class="testimonial-author">Jasna M.</div>
                             </div>
                             <div class="testimonial-image">
-                                <img src="./img/500kb.png" alt="Kundenbild 3">
+                                <img src="./img/abgeschlossene-projekte/dnd-mage.jpg" alt="Kundenbild 3">
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-text">
+                                "Ich bin mehr als zufrieden. Meine gewünschten Artikel werden immer zeitnah fertiggestellt und sehen durchweg richtig gut aus. Ich habe schon mehrfach bestellt, sowohl für mich selbst als auch für meine Nichten, und jedes einzelne Teil überzeugt. Die Qualität ist super, die Verarbeitung sauber und die Preis-Leistung einfach top. Besonders schätze ich die Zuverlässigkeit. Absprachen werden eingehalten und alles läuft unkompliziert ab. Man sieht bei jedem Projekt, wie viel Liebe zum Detail und Arbeit darin steckt. Genau das macht den Unterschied. Ich werde auf jeden Fall noch einige Sachen bestellen und kann den 3D-Druck absolut weiterempfehlen."
+                                <div class="testimonial-author">Celina G.</div>
+                            </div>
+                            <div class="testimonial-image">
+                                <img src="./img/abgeschlossene-projekte/axolo (1).jpeg" alt="Kundenbild 4">
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-text">
+                                "Ich bin mit den Figuren bisher sehr zufrieden. Für einen fairen Preis habe ich mir dieses kleine Blitza gekauft. Für die Größe und die Qualität ist das wirklich ein absolut angemessener Preis. Mein einziger kleiner Kritikpunkt wäre, dass man an einigen Stellen die Druckspuren noch etwas hätte glattschleifen können. Das ist aber wirklich nichts Großes, man sieht es nur, wenn man sehr nah hinschaut. Wie man auf dem Bild erkennen kann, hat die kleine, süße Figur einen Ehrenplatz in meiner Vitrine bekommen. Besonders gefreut hat mich außerdem, dass meiner Bestellung noch eine kleine Mini-Figur als Extra beigelegt war. Das war eine sehr schöne Überraschung!"
+                                <div class="testimonial-author">Jorden J.</div>
+                            </div>
+                            <div class="testimonial-image">
+                                <img src="./img/rezensionen/blitza.jpg" alt="Kundenbild 5">
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-text">
+                                "Sehr netter und unkomplizierter Kontakt, dazu pünktlich geliefert und die gedruckten Dracheneier hatten eine super Qualität. Insgesamt sehr zufrieden."
+                                <div class="testimonial-author">Sepp S.</div>
+                            </div>
+                            <div class="testimonial-image">
+                                <img src="./img/abgeschlossene-projekte/dragonegg (5).jpg" alt="Kundenbild 6">
                             </div>
                         </div>
 
@@ -203,10 +213,9 @@
 
                 </div>
             </div>
-    </section>
+        </section>
 
-
-        <section class="bottom-section">
+<section class="bottom-section">
             <div class="container">
                 <div class="bottom-grid">
                     
@@ -217,7 +226,7 @@
                         </p>
                         <ul class="link-list">
                             <li><a href="./abgeschlossen.html">➜ Zur Galerie</a></li>
-                            <li><a href="./planung.html">➜ Zur Warteschlange</a></li>
+                            <li><a href="./planung.html">➜ Zu den kommenden Projekten</a></li>
                         </ul>
                     </div>
 
@@ -229,33 +238,21 @@
                         <a href="./kontakt.html" class="btn-primary">Jetzt anfragen</a>
                     </div>
 
+                    <div class="text-box bottom-box cta-highlight">
+                        <h3>Support & Teekasse</h3>
+                        <p>
+                            Dir gefällt, was ich hier treibe, aber du brauchst gerade keinen 3D-Druck? Ich freue mich riesig über einen virtuellen Tee, der direkt in neues Resin und Filament fließt!
+                        </p>
+                        <a href="https://ko-fi.com/selfmadenerdstuff" target="_blank" class="btn-primary">Spendier mir einen Tee</a>
+                    </div>
+
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer>
-        <div class="footer-content">
-            
-            <div class="social-links">
-                <a href="https://www.instagram.com/selfmadenerdstuff?igsh=emRxYXQ5bXRobDhi" target="_blank" aria-label="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://www.tiktok.com/@selfmadenerdstuff?_r=1&_t=ZG-93QKLPCcbzM" target="_blank" aria-label="TikTok">
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
-                <a href="https://discord.com/users/834488518608027720" target="_blank" aria-label="Discord">
-                    <i class="fa-brands fa-discord"></i>
-                </a>
-            </div>
-
-            <div class="footer-text">
-                <p class="copyright">© 2026 Selfmade Nerdstuff</p>
-            </div>
-
-        </div>
-    </footer>
+<footer id="footer-placeholder"></footer>
 
     <script src="app.js"></script>
     <script src="data.js"></script>

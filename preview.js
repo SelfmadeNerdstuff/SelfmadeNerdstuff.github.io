@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const resinContainer = document.getElementById('resinPreview');
     const fdmContainer = document.getElementById('fdmPreview');
 
-    // 2. Daten filtern (Nur abgeschlossene)
-    // Wir nehmen an, die Liste ist schon sortiert. Falls nicht, könnte man .reverse() nutzen.
-    // .slice(0, 3) nimmt nur die ersten 3 Elemente.
-    const resinProjects = images.filter(img => img.typ === 'resin' && img.status === 'abgeschlossen').slice(0, 3);
-    const fdmProjects = images.filter(img => img.typ === 'fdm' && img.status === 'abgeschlossen').slice(0, 3);
+    // 2. Daten filtern (Nur abgeschlossene) UND umdrehen (neueste zuerst!)
+    // .reverse() dreht die Liste um, sodass die Einträge von GANZ UNTEN in der data.js zuerst kommen.
+    // .slice(0, 3) nimmt dann die ersten 3 dieser umgedrehten Liste.
+    const resinProjects = images.filter(img => img.typ === 'resin' && img.status === 'abgeschlossen').reverse().slice(0, 3);
+    const fdmProjects = images.filter(img => img.typ === 'fdm' && img.status === 'abgeschlossen').reverse().slice(0, 3);
 
     // 3. Funktion zum Einfügen der Bilder
     function fillPreview(projects, container) {

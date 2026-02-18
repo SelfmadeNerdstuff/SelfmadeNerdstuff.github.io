@@ -191,6 +191,7 @@ nav ul li:last-child::after {
 .burger-menu img {
     width: 30px;
     height: auto;
+    filter: invert(75%) sepia(51%) saturate(1067%) hue-rotate(130deg) brightness(99%) contrast(92%);
 }
 
 /* =========================================
@@ -334,12 +335,23 @@ main {
     transition: filter 0.2s;
 }
 
-.card-arrow:hover {
-    background-color: #2AE1E8;
-    transform: translateY(-50%) scale(1.1);
+/* Hover-Effekt nur für Bildschirme mit echter Maus (Desktop) */
+@media (hover: hover) {
+    .card-arrow:hover {
+        background-color: #2AE1E8;
+        transform: translateY(-50%) scale(1.1);
+    }
+    .card-arrow:hover img {
+        filter: invert(0);
+    }
 }
 
-.card-arrow:hover img {
+/* Kurzes Aufblinken (Active-Zustand) beim Drauftippen auf Handys */
+.card-arrow:active {
+    background-color: #2AE1E8;
+    transform: translateY(-50%) scale(0.95); /* Wird beim Antippen leicht "eingedrückt" */
+}
+.card-arrow:active img {
     filter: invert(0);
 }
 
@@ -355,7 +367,7 @@ main {
    5. STARTSEITE: HERO & BILDER-TRACK
    ========================================= */
 .hero-section {
-    min-height: 100vh;
+    min-height: 100vh; /* Zurück zum Standard */
     width: 100%;
     background: linear-gradient(rgba(6, 23, 30, 0.7), rgba(6, 23, 30, 0.7)), url('./img/500kb.png');
     background-size: cover;
@@ -453,7 +465,7 @@ main {
     display: flex;
     gap: 20px;
     width: max-content;
-    animation: slideScroll 30s linear infinite;
+    animation: slideScroll 120s linear infinite;
 }
 
 .image-track:hover {
@@ -1470,6 +1482,7 @@ footer {
 .social-links {
     display: flex;
     gap: 24px;
+    align-items: center;
 }
 
 .social-links a {
@@ -1482,6 +1495,20 @@ footer {
 .social-links a:hover {
     color: white;
     transform: scale(1.2);
+}
+
+.social-links .tea-link {
+    display: flex;
+    align-items: center;
+}
+.tea-icon {
+    display: inline-block;
+    width: 30px;  /* Minimal kleiner als 24px, damit es optisch nicht wuchtiger wirkt als die anderen */
+    height: 30px;
+    background-color: currentColor; /* Magie! Erbt automatisch das Grau und beim Hover das helle Weiß */
+    -webkit-mask: url('./img/tee.png') no-repeat center / contain;
+    mask: url('./img/tee.png') no-repeat center / contain;
+    transition: background-color 0.3s ease;
 }
 
 .copyright {
@@ -1745,6 +1772,24 @@ footer {
 }
 
 @media (max-width: 480px) {
+/* NEU: Weniger Platzverschwendung auf kleinen Displays */
+    .hero-section {
+        padding-top: 20px; 
+        padding-bottom: 20px; /* Kein Extra-Platz mehr für den Pfeil nötig */
+    }
+    .hero-text-box {
+        margin: 15px 0 25px 0; 
+    }
+    
+    /* Pfeil auf dem Handy ausblenden (Nutzer scrollen hier intuitiv) */
+    .scroll-arrow {
+        display: none; 
+    }
+    .scroll-arrow img {
+        width: 25px; 
+    }
+
+    /* Bestehende Mobile-Regeln */
     header h2 {
         font-size: 1.2rem;
     }

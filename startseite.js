@@ -62,3 +62,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // =========================================
+    // REZENSIONEN ZUFÄLLIG MISCHEN
+    // =========================================
+    const sliderContent = document.querySelector('.testimonial-slider-content');
+    
+    if (sliderContent) {
+        // Alle einzelnen Rezensionen suchen und in eine Liste (Array) packen
+        const slides = Array.from(sliderContent.querySelectorAll('.testimonial-slide'));
+
+        // Die Liste zufällig mischen (Fisher-Yates Algorithmus)
+        for (let i = slides.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [slides[i], slides[j]] = [slides[j], slides[i]];
+        }
+
+        // Die gemischten Elemente neu in den Container packen
+        slides.forEach((slide, index) => {
+            // Zuerst bei allen die Sichtbarkeit (Klasse 'active') entfernen
+            slide.classList.remove('active'); 
+            
+            // Element an der neuen, zufälligen Position wieder einfügen
+            sliderContent.appendChild(slide); 
+            
+            // Nur dem allerersten Element der neuen Liste die 'active' Klasse geben, damit es angezeigt wird
+            if (index === 0) {
+                slide.classList.add('active'); 
+            }
+        });
+    }
+});

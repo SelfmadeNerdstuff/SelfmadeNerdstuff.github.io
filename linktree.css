@@ -1,0 +1,143 @@
+/* =========================================
+   LINKTREE / SOCIAL LINKS SEITE
+   ========================================= */
+
+.linktree-body {
+    background-color: rgb(6, 23, 30);
+    display: flex;
+    flex-direction: column; /* Behält das Spalten-Layout bei */
+    align-items: center; /* ZENTRIERT den Kasten horizontal in der Mitte! */
+    justify-content: flex-start; /* Fängt oben an, statt vertikal zu zentrieren */
+    min-height: 100vh;
+    padding: 80px 20px 40px 20px; /* Oben etwas mehr Luft für große Bildschirme */
+    position: relative;
+    margin: 0; 
+}
+
+.linktree-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.linktree-container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.linktree-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.linktree-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 5px rgba(42, 225, 232, 0.3));
+}
+
+
+.linktree-title {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    color: white;
+    font-family: "TitelSchrift", sans-serif;
+}
+
+.linktree-desc {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin: 0;
+    font-family: "TextSchrift", sans-serif;
+}
+
+.linktree-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.linktree-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: rgba(40, 39, 42, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: "TextSchrift", sans-serif;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.linktree-btn i {
+    position: absolute;
+    left: 20px;
+    font-size: 1.4rem;
+}
+
+.linktree-btn:hover {
+    transform: translateY(-3px);
+    border-color: #2AE1E8;
+    background-color: rgba(42, 225, 232, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.linktree-main-btn {
+    border-color: #2AE1E8;
+    margin-bottom: 10px;
+}
+
+.linktree-main-btn i {
+    color: #2AE1E8;
+}
+
+/* Anpassung für das Tee-Icon auf der Linktree-Seite */
+.tea-icon-linktree {
+    position: absolute;
+    left: 20px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: currentColor;
+    -webkit-mask: url('./img/tee.png') no-repeat center / contain;
+    mask: url('./img/tee.png') no-repeat center / contain;
+}
+
+.linktree-support-btn {
+    margin-top: 10px;
+}
+
+.linktree-support-btn:hover .tea-icon-linktree {
+    background-color: #2AE1E8;
+}
+
+/* Eine kleine Animation, falls du sie nicht global in der style.css hast */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
