@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = document.createElement('div');
         card.className = 'project-card';
         
+        card.dataset.kategorie = projekt.kategorie ? projekt.kategorie.toLowerCase() : "";
+
         // Klick auf die GANZE Karte öffnet Modal (nur Desktop ab 640px)
         card.onclick = (e) => openModal(index);
 

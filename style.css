@@ -1883,3 +1883,140 @@ footer {
         border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 }
+/* =========================================
+   17. FILTER SYSTEM (Bubbles)
+   ========================================= */
+.filter-wrapper {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto 30px auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.filter-toggle-btn {
+    display: none; /* Desktop: ausgeblendet */
+    background-color: transparent;
+    border: 2px solid #2AE1E8;
+    color: #2AE1E8;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.filter-toggle-btn:hover {
+    background-color: #2AE1E8;
+    color: rgb(6, 23, 30);
+}
+
+.filter-bubbles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.filter-header-mobile, .apply-btn-mobile {
+    display: none; /* Desktop: ausgeblendet */
+}
+
+.bubble-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Der eigentliche Filter-Bubble Style */
+.filter-bubble {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.filter-bubble:hover {
+    border-color: #2AE1E8;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.filter-bubble.active {
+    background-color: rgba(42, 225, 232, 0.15); /* Leichtes Türkis im Hintergrund */
+    border-color: #2AE1E8;
+    color: #2AE1E8;
+    box-shadow: 0 0 10px rgba(42, 225, 232, 0.2);
+}
+
+/* === MOBILE ANSICHT (Overlay / Burger-Style) === */
+@media (max-width: 768px) {
+    .filter-toggle-btn {
+        display: flex;
+    }
+
+    .filter-bubbles-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(6, 23, 30, 0.98);
+        backdrop-filter: blur(10px);
+        z-index: 2000;
+        flex-direction: column;
+        justify-content: center; /* Alles in die Mitte schieben */
+        align-items: center;
+        padding: 40px;
+        transform: translateY(-100%); /* Standard: Versteckt oben */
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        visibility: hidden;
+    }
+
+    .filter-bubbles-container.open {
+        transform: translateY(0); /* Reingefahren */
+        visibility: visible;
+    }
+
+    .bubble-list {
+        margin: 30px 0;
+        max-width: 300px;
+    }
+
+    .filter-header-mobile {
+        display: block;
+        color: white;
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: "TitelSchrift", sans-serif;
+        font-size: 1.5rem;
+        border-bottom: 1px solid #2AE1E8;
+        padding-bottom: 10px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .apply-btn-mobile {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin-top: 20px;
+    }
+    
+    /* Bubbles auf Handy etwas größer für Finger */
+    .filter-bubble {
+        padding: 12px 24px;
+        font-size: 1.1rem;
+    }
+}
