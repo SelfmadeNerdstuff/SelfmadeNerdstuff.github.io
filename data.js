@@ -33,14 +33,14 @@ const images = [
     {
         id: "baymax",
         image: "./img/abgeschlossene-projekte/baymax (1).jpg",
-        titel: "Baymax - gestrickt",
+        titel: "Heilroboter - gestrickt",
         status: "abgeschlossen", typ: "fdm", kategorie: "film", dauer: "5 Std.", introText: "", align: "",
         galerie: ["./img/abgeschlossene-projekte/baymax (2).jpg", "./img/abgeschlossene-projekte/baymax (3).jpg"]
     },
     {
         id: "beast-lamp",
         image: "./img/abgeschlossene-projekte/beast-lamp (1).jpg",
-        titel: "Die Schöne und das Biest - Lampe",
+        titel: "Märchenhafte Rosen-Lampe",
         status: "abgeschlossen", typ: "fdm", kategorie: "film", dauer: "6,5 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/beast-lamp (2).jpg", "./img/abgeschlossene-projekte/beast-lamp (3).jpg",
@@ -50,7 +50,7 @@ const images = [
     {
         id: "broly",
         image: "./img/abgeschlossene-projekte/broly (1).jpg",
-        titel: "Broly",
+        titel: "Legendärer Anime-Krieger",
         status: "abgeschlossen", typ: "resin", kategorie: "anime, tabletop", dauer: "8 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/broly (2).jpg", "./img/abgeschlossene-projekte/broly (3).jpg",
@@ -61,7 +61,7 @@ const images = [
     {
         id: "cap",
         image: "./img/abgeschlossene-projekte/cap (1).jpg",
-        titel: "Captain America",
+        titel: "Super-Soldat mit Schild",
         status: "abgeschlossen", typ: "resin", kategorie: "film, tabletop", dauer: "8 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/cap (2).jpg", "./img/abgeschlossene-projekte/cap (3).jpg",
@@ -85,7 +85,7 @@ const images = [
     {
         id: "chang",
         image: "./img/abgeschlossene-projekte/chang (1).jpg",
-        titel: "Shang-Chi",
+        titel: "Martial-Arts Meister",
         status: "abgeschlossen", typ: "resin", kategorie: "film, tabletop", dauer: "8 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/chang (2).jpg", "./img/abgeschlossene-projekte/chang (3).jpg",
@@ -95,7 +95,7 @@ const images = [
     {
         id: "chibi-kaiju",
         image: "./img/abgeschlossene-projekte/chibi-kaiju (1).jpg",
-        titel: "Kaiju Nr. 8 - Chibi",
+        titel: "Monster-Kämpfer Chibi",
         status: "abgeschlossen", typ: "resin", kategorie: "anime", dauer: "12 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/chibi-kaiju (2).jpg", "./img/abgeschlossene-projekte/chibi-kaiju (3).jpg",
@@ -105,7 +105,7 @@ const images = [
     {
         id: "cosmo",
         image: "./img/abgeschlossene-projekte/cosmo (1).jpg",
-        titel: "Cosmo",
+        titel: "Weltraum-Hund",
         status: "abgeschlossen", typ: "resin", kategorie: "film, tabletop", dauer: "8 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/cosmo (2).jpg", "./img/abgeschlossene-projekte/cosmo (3).jpg",
@@ -115,7 +115,7 @@ const images = [
     {
         id: "dandadan",
         image: "./img/abgeschlossene-projekte/dandadan (1).jpg",
-        titel: "Momo & Ken - Dandadan",
+        titel: "Anime Geisterjäger",
         status: "abgeschlossen", typ: "resin", kategorie: "anime", dauer: "24 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/dandadan (2).jpg", "./img/abgeschlossene-projekte/dandadan (3).jpg"
@@ -124,7 +124,7 @@ const images = [
     {
         id: "destro",
         image: "./img/abgeschlossene-projekte/destro (1).jpg",
-        titel: "Destroyer",
+        titel: "Gepanzerter Wächter",
         status: "abgeschlossen", typ: "resin", kategorie: "film, tabletop", dauer: "8 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/destro (2).jpg", "./img/abgeschlossene-projekte/destro (3).jpg",
@@ -154,7 +154,7 @@ const images = [
     {
         id: "dicewitcher",
         image: "./img/abgeschlossene-projekte/dicewitcher (1).jpg",
-        titel: "Dicetower - Witcher",
+        titel: "Würfelturm - Monsterjäger",
         status: "abgeschlossen", typ: "fdm", kategorie: "tabletop", dauer: "8 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/dicewitcher (2).jpg", "./img/abgeschlossene-projekte/dicewitcher (3).jpg",
@@ -164,7 +164,7 @@ const images = [
     {
         id: "dnd-mage",
         image: "./img/abgeschlossene-projekte/dnd-mage.jpg",
-        titel: "DnD - Magierin",
+        titel: "Tabletop - Magierin",
         status: "abgeschlossen", typ: "resin", kategorie: "tabletop", dauer: "7 Std.", introText: "", align: "",
         galerie: []
     },
@@ -182,7 +182,7 @@ const images = [
     {
         id: "dndtracker",
         image: "./img/abgeschlossene-projekte/dndtracker (1).jpg",
-        titel: "DnD - Zaubertracker",
+        titel: "Tabletop - Zaubertracker",
         status: "abgeschlossen", typ: "fdm", kategorie: "tabletop", dauer: "4 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/dndtracker (2).jpg", "./img/abgeschlossene-projekte/dndtracker (3).jpg",
@@ -211,7 +211,7 @@ const images = [
     {
         id: "DrStr",
         image: "./img/abgeschlossene-projekte/DrStr (1).jpg",
-        titel: "Doctor Strange",
+        titel: "Meister der Magie",
         status: "abgeschlossen", typ: "resin", kategorie: "film", dauer: "30 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/DrStr (2).jpg", "./img/abgeschlossene-projekte/DrStr (3).jpg",
@@ -242,7 +242,7 @@ const images = [
     {
         id: "exodia",
         image: "./img/abgeschlossene-projekte/exodia (1).jpg",
-        titel: "Exodia",
+        titel: "Verbotenes Karten-Monster",
         status: "abgeschlossen", typ: "resin", kategorie: "anime, gaming", dauer: "30 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/exodia (2).jpg", "./img/abgeschlossene-projekte/exodia (3).jpg",
@@ -254,14 +254,14 @@ const images = [
     {
         id: "fufur",
         image: "./img/abgeschlossene-projekte/fufur (1).jpg",
-        titel: "Fuchur",
+        titel: "Glücksdrache",
         status: "abgeschlossen", typ: "fdm", kategorie: "film, buch", dauer: "4 Std.", introText: "", align: "",
         galerie: ["./img/abgeschlossene-projekte/fufur (2).jpg"]
     },
     {
         id: "gandalf",
         image: "./img/abgeschlossene-projekte/gandalf (1).jpg",
-        titel: "Gandalf - Klemmbaustein",
+        titel: "Grauer Zauberer - Klemmbaustein",
         status: "abgeschlossen", typ: "fdm", kategorie: "film, buch", dauer: "18 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/gandalf (2).jpg", "./img/abgeschlossene-projekte/gandalf (3).jpg",
@@ -271,7 +271,7 @@ const images = [
     {
         id: "gg",
         image: "./img/abgeschlossene-projekte/gg (1).jpg",
-        titel: "Gengar",
+        titel: "Lila Schattengeist",
         status: "abgeschlossen", typ: "resin", kategorie: "anime", dauer: "14 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/gg (2).jpg", "./img/abgeschlossene-projekte/gg (3).jpg",
@@ -291,14 +291,14 @@ const images = [
     {
         id: "hdr-key",
         image: "./img/abgeschlossene-projekte/hdr-key (1).jpg",
-        titel: "Thorins Schlüssel",
+        titel: "Zwergen-Schlüssel",
         status: "abgeschlossen", typ: "fdm", kategorie: "film, buch", dauer: "3 Std.", introText: "", align: "",
         galerie: ["./img/abgeschlossene-projekte/hdr-key (2).jpg", "./img/abgeschlossene-projekte/hdr-key (3).jpg"]
     },
     {
         id: "hdr-wächter",
         image: "./img/abgeschlossene-projekte/hdr-wächter (1).jpg",
-        titel: "Die Argonath - „Tor der Könige“",
+        titel: "Königs-Statuen Monument",
         status: "abgeschlossen", typ: "fdm", kategorie: "film, buch", dauer: "5 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/hdr-wächter (2).jpg", "./img/abgeschlossene-projekte/hdr-wächter (3).jpg",
@@ -343,7 +343,7 @@ const images = [
     {
         id: "jp",
         image: "./img/abgeschlossene-projekte/jp (1).jpg",
-        titel: "Jack Sparrow",
+        titel: "Piratenkapitän",
         status: "abgeschlossen", typ: "resin", kategorie: "film", dauer: "18 Std.", introText: "", align: "",
         align: "top",
         galerie: [
@@ -353,7 +353,7 @@ const images = [
     {
         id: "JtS",
         image: "./img/abgeschlossene-projekte/JtS (1).jpg",
-        titel: "Jack Skellington - Klemmbaustein",
+        titel: "Kürbiskönig - Klemmbaustein",
         status: "abgeschlossen", typ: "fdm", kategorie: "film", dauer: "18 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/JtS (2).jpg", "./img/abgeschlossene-projekte/JtS (3).jpg",
@@ -363,7 +363,7 @@ const images = [
     {
         id: "kaiju",
         image: "./img/abgeschlossene-projekte/kaiju (1).jpg",
-        titel: "Kaiju Nr. 8",
+        titel: "Mutierter Monster-Kämpfer",
         status: "abgeschlossen", typ: "resin", kategorie: "anime", dauer: "22 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/kaiju (2).jpg", "./img/abgeschlossene-projekte/kaiju (3).jpg",
@@ -375,7 +375,7 @@ const images = [
     {
         id: "kaktor",
         image: "./img/abgeschlossene-projekte/kaktor (1).jpg",
-        titel: "Kaktor - Final Fantasy",
+        titel: "Laufender Kaktus",
         status: "abgeschlossen", typ: "fdm", kategorie: "gaming", dauer: "4 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/kaktor (2).jpg", "./img/abgeschlossene-projekte/kaktor (3).jpg",
@@ -402,14 +402,14 @@ const images = [
     {
         id: "lama-drink",
         image: "./img/abgeschlossene-projekte/lama-drink (1).jpg",
-        titel: "Ein Königreich für ein Lama - Gift",
+        titel: "Das Inka-Giftfläschchen",
         status: "abgeschlossen", typ: "fdm", kategorie: "film", dauer: "4 Std.", introText: "", align: "",
         galerie: ["./img/abgeschlossene-projekte/lama-drink (2).jpg"]
     },
     {
         id: "mage",
         image: "./img/abgeschlossene-projekte/mage (1).jpg",
-        titel: "Schwarzes Magiermädchen",
+        titel: "Dunkle Anime-Magierin",
         status: "abgeschlossen", typ: "resin", kategorie: "anime, gaming", dauer: "14 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/mage (2).jpg", "./img/abgeschlossene-projekte/mage (3).jpg",
@@ -422,14 +422,14 @@ const images = [
     {
         id: "marvl-group1",
         image: "./img/abgeschlossene-projekte/marvl-group1.jpg",
-        titel: "Marvel - Gruppe",
+        titel: "Superhelden - Gruppe",
         status: "abgeschlossen", typ: "resin", kategorie: "film", dauer: "", introText: "", align: "",
         galerie: []
     },
     {
         id: "mel",
         image: "./img/abgeschlossene-projekte/mel (1).jpg",
-        titel: "Meliodas",
+        titel: "Anime-Dämonenprinz",
         status: "abgeschlossen", typ: "resin", kategorie: "anime", dauer: "5 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/mel (2).jpg", "./img/abgeschlossene-projekte/mel (3).jpg",
@@ -439,7 +439,7 @@ const images = [
     {
         id: "metgrey",
         image: "./img/abgeschlossene-projekte/metgrey (1).jpg",
-        titel: "MetalGreymon",
+        titel: "Cyborg-Dinosaurier",
         status: "abgeschlossen", typ: "fdm", kategorie: "anime", dauer: "41 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/metgrey (2).jpg", "./img/abgeschlossene-projekte/metgrey (3).jpg",
@@ -451,7 +451,7 @@ const images = [
     {
         id: "might",
         image: "./img/abgeschlossene-projekte/might (1).jpg",
-        titel: "All Might",
+        titel: "Muskulöser Anime-Held",
         status: "abgeschlossen", typ: "resin", kategorie: "anime", dauer: "18 Std.", introText: "", align: "",
         galerie: ["./img/abgeschlossene-projekte/might (2).jpg", "./img/abgeschlossene-projekte/might (3).jpg"]
     },
@@ -468,7 +468,7 @@ const images = [
     {
         id: "miniasT",
         image: "./img/abgeschlossene-projekte/miniasT (1).jpg",
-        titel: "Minas Tirith",
+        titel: "Weiße Fantasy-Stadt",
         status: "abgeschlossen", typ: "fdm", kategorie: "tabletop, dekoration", dauer: "8 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/miniasT (2).jpg", "./img/abgeschlossene-projekte/miniasT (3).jpg",
@@ -485,14 +485,14 @@ const images = [
     {
         id: "pant",
         image: "./img/abgeschlossene-projekte/pant (1).jpg",
-        titel: "Zombie - Black Panther",
+        titel: "Zombie - Panther-Held",
         status: "abgeschlossen", typ: "resin", kategorie: "film, tabletop", dauer: "7 Std.", introText: "", align: "",
         galerie: ["./img/abgeschlossene-projekte/pant (2).jpg", "./img/abgeschlossene-projekte/pant (3).jpg"]
     },
     {
         id: "pikash",
         image: "./img/abgeschlossene-projekte/pikash (1).jpg",
-        titel: "Pikashi",
+        titel: "Blitz-Maus Ninja",
         status: "abgeschlossen", typ: "resin", kategorie: "anime", dauer: "16 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/pikash (2).jpg", "./img/abgeschlossene-projekte/pikash (3).jpg",
@@ -519,7 +519,7 @@ const images = [
     {
         id: "stan",
         image: "./img/abgeschlossene-projekte/stan (1).jpg",
-        titel: "Stan Lee",
+        titel: "Comic-Legende",
         status: "abgeschlossen", typ: "resin", kategorie: "film, tabletop", dauer: "6 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/stan (2).jpg", "./img/abgeschlossene-projekte/stan (3).jpg",
@@ -529,28 +529,28 @@ const images = [
     {
         id: "token",
         image: "./img/abgeschlossene-projekte/token.jpg",
-        titel: "Fluch der Karibik - Verfluchte Münzen",
+        titel: "Piraten-Fluch Münzen",
         status: "abgeschlossen", typ: "fdm", kategorie: "film, tabletop", dauer: "2 Std.", introText: "", align: "",
         galerie: []
     },
     {
         id: "untersetzer1",
         image: "./img/abgeschlossene-projekte/untersetzer1.jpg",
-        titel: "Warhammer 40 - Untersetzer - Space Marines",
+        titel: "Sci-Fi Tabletop - Untersetzer Rüstung",
         status: "abgeschlossen", typ: "fdm", kategorie: "gaming, tabletop", dauer: "4 Std.", introText: "", align: "",
         galerie: []
     },
     {
         id: "untersetzer2",
         image: "./img/abgeschlossene-projekte/untersetzer2.jpg",
-        titel: "Warhammer 40 - Untersetzer - Orks",
+        titel: "Sci-Fi Tabletop - Untersetzer Orks",
         status: "abgeschlossen", typ: "fdm", kategorie: "gaming, tabletop", dauer: "4 Std.", introText: "", align: "",
         galerie: []
     },
     {
         id: "untersetzer3",
         image: "./img/abgeschlossene-projekte/untersetzer3.jpg",
-        titel: "Warhammer 40 - Untersetzer - Space Marines 2",
+        titel: "Sci-Fi Tabletop - Untersetzer Rüstung 2",
         status: "abgeschlossen", typ: "fdm", kategorie: "gaming, tabletop", dauer: "4 Std.", introText: "", align: "",
         galerie: []
     },
@@ -567,7 +567,7 @@ const images = [
     {
         id: "VvsB",
         image: "./img/abgeschlossene-projekte/VvsB (1).jpg",
-        titel: "Vegeta vs. Broly",
+        titel: "Anime-Krieger Duell",
         status: "abgeschlossen", typ: "resin", kategorie: "anime", dauer: "19 Std.", introText: "", align: "",
         galerie: ["./img/abgeschlossene-projekte/VvsB (2).jpg"]
     },
@@ -630,35 +630,35 @@ const images = [
     {
         id: "momo",
         image: "./img/in-planung/momo.jpg",
-        titel: "Momo - Dandadan",
+        titel: "Anime Geisterjägerin",
         status: "planung", typ: "resin", kategorie: "anime", dauer: "", introText: "", align: "",
         galerie: []
     },
     {
         id: "zenitsu",
         image: "./img/in-planung/demonslayer2.jpg",
-        titel: "Zenitsu",
+        titel: "Schwertkämpfer des Blitzes",
         status: "planung", typ: "resin", kategorie: "anime", dauer: "", introText: "", align: "",
         galerie: []
     },
     {
         id: "inosuke",
         image: "./img/in-planung/demonslayer.jpg",
-        titel: "Inosuke",
+        titel: "Eberkopf-Schwertkämpfer",
         status: "planung", typ: "resin", kategorie: "anime", dauer: "", introText: "", align: "",
         galerie: []
     },
     {
         id: "dragon2",
         image: "./img/in-planung/dragon.jpg",
-        titel: "Solo Leveling - Drache",
+        titel: "Schatten-Drache",
         status: "planung", typ: "resin", kategorie: "anime", dauer: "", introText: "", align: "",
         galerie: []
     },
     {
         id: "cloud",
         image: "./img/in-planung/cloud.jpg",
-        titel: "Cloud",
+        titel: "Söldner mit Großschwert",
         status: "planung", typ: "resin", kategorie: "gaming", dauer: "", introText: "", align: "",
         galerie: []
     },
@@ -672,14 +672,14 @@ const images = [
     {
         id: "renamon",
         image: "./img/in-planung/renamon.jpg",
-        titel: "Renamon",
+        titel: "Fuchs-Kampfgeist",
         status: "planung", typ: "resin", kategorie: "anime", dauer: "", introText: "", align: "",
         galerie: []
     },
     {
         id: "bnb",
         image: "./img/in-planung/bnb.jpg",
-        titel: "Die Schöne und das Biest - Figur",
+        titel: "Märchenhafte Prinzessin & Prinz",
         status: "planung", typ: "resin", kategorie: "film", dauer: "", introText: "", align: "",
         galerie: []
     },
@@ -714,7 +714,7 @@ const images = [
     {
         id: "glur",
         image: "./img/abgeschlossene-projekte/glur (1).jpg",
-        titel: "Glurak",
+        titel: "Feuerdrache",
         status: "abgeschlossen", typ: "fdm", kategorie: "anime", dauer: "25 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/glur (2).jpg", 
@@ -734,14 +734,14 @@ const images = [
     {
         id: "dieb-dnd",
         image: "./img/abgeschlossene-projekte/dieb-dnd.jpg",
-        titel: "DnD - Dieb",
+        titel: "Tabletop - Dieb",
         status: "abgeschlossen", typ: "resin", kategorie: "tabletop", dauer: "8 Std.", introText: "", align: "",
         galerie: []
     },
     {
         id: "wolverine",
         image: "./img/abgeschlossene-projekte/wolverine (1).jpg",
-        titel: "Wolverine",
+        titel: "Mutanten-Krieger mit Klauen",
         status: "abgeschlossen", typ: "resin", kategorie: "film", dauer: "35 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/wolverine (2).jpg", 
@@ -784,7 +784,7 @@ const images = [
     {
         id: "jsk-lamp",
         image: "./img/abgeschlossene-projekte/jsk-lamp (2).jpg",
-        titel: "Jack Skellington - Lampe",
+        titel: "Halloween Skelett - Lampe",
         status: "abgeschlossen", typ: "fdm", kategorie: "dekoration, film", dauer: "16 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/jsk-lamp (1).jpg", 
@@ -794,14 +794,14 @@ const images = [
     {
         id: "dnd-lamp",
         image: "./img/abgeschlossene-projekte/dnd-lamp.jpg",
-        titel: "DnD - Lampe",
+        titel: "Tabletop - Meister-Lampe",
         status: "abgeschlossen", typ: "fdm", kategorie: "dekoration, tabletop", dauer: "10 Std.", introText: "", align: "",
         galerie: []
     },
     {
         id: "blitza",
         image: "./img/abgeschlossene-projekte/blitza (1).jpg",
-        titel: "Blitza",
+        titel: "Elektro-Fuchs",
         status: "abgeschlossen", typ: "fdm", kategorie: "anime", dauer: "4 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/blitza (2).jpg", 
@@ -825,7 +825,7 @@ const images = [
     {
         id: "fine",
         image: "./img/abgeschlossene-projekte/fine (1).jpeg",  
-        titel: "This is fine",
+        titel: "Hund im Feuer (Meme)",
         status: "abgeschlossen", typ: "resin", kategorie: "dekoration, sonstiges", dauer: "24 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/fine (2).jpeg",     
@@ -835,12 +835,11 @@ const images = [
     {
         id: "turt",
         image: "./img/abgeschlossene-projekte/turt (1).jpeg",  
-        titel: "Turtok", 
+        titel: "Wasser-Schildkröte", 
         status: "abgeschlossen", typ: "fdm", kategorie: "anime", dauer: "18 Std.", introText: "", align: "",
         galerie: [
             "./img/abgeschlossene-projekte/turt (2).jpeg",     
-            "./img/abgeschlossene-projekte/turt (3).jpeg",     
-            "./img/abgeschlossene-projekte/turt (4).jpeg"      
+            "./img/abgeschlossene-projekte/turt (3).jpeg"
         ]
     },
     {
